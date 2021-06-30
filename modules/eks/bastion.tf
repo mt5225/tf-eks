@@ -24,7 +24,7 @@ module "bastion-asg" {
 
   # Auto scaling group
   asg_name                  = "${var.cluster-name}-bastion"
-  vpc_zone_identifier       = data.aws_subnet_ids.public.ids
+  vpc_zone_identifier       = module.vpc.public_subnets
   health_check_type         = "EC2"
   min_size                  = 1
   max_size                  = 1

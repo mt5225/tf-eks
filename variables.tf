@@ -13,7 +13,7 @@ variable "aws-region" {
 }
 
 variable "availability-zones" {
-  default     = ["us-west-1a", "us-west-1b", "us-west-1c"]
+  default     = ["us-west-2a", "us-west-2b", "us-west-2c"]
   type        = list(any)
   description = "The AWS AZ to deploy EKS"
 }

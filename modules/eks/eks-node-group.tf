@@ -2,7 +2,7 @@ resource "aws_eks_node_group" "eks-node-group" {
   cluster_name    = var.cluster-name
   node_group_name = "${var.cluster-name}-default-node-group"
   node_role_arn   = aws_iam_role.node.arn
-  subnet_ids      = data.aws_subnet_ids.private.ids
+  subnet_ids      = module.vpc.private_subnets
   scaling_config {
     desired_size = var.desired-capacity
     max_size     = var.max-size

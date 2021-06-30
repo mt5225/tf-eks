@@ -9,3 +9,5 @@ eks-state
 # .tfvars files
 *.tfvars
 tfplan
+*.conf
+.terraform.lock.hcl

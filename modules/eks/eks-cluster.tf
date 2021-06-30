@@ -9,7 +9,7 @@ resource "aws_eks_cluster" "eks" {
 
   vpc_config {
     security_group_ids = [module.cluster-sg.security_group_id]
-    subnet_ids         = data.aws_subnet_ids.private.ids
+    subnet_ids         = module.vpc.private_subnets
   }
 
   enabled_cluster_log_types = var.eks-cw-logging

@@ -55,3 +55,14 @@ output "config-map" {
 }
 
 ```
+
+## verify
+
+- create kube.conf from output
+- run command
+
+```bash
+kubectl --kubeconfig ./kube.conf config view
+kubectl --kubeconfig ./kube.conf get nodes
+kubectl --kubeconfig ./kube.conf describe node xxx
+```
