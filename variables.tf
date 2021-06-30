@@ -7,13 +7,13 @@ variable "cluster-name" {
 }
 
 variable "aws-region" {
-  default     = "us-east-1"
+  default     = "us-west-1"
   type        = string
   description = "The AWS Region to deploy EKS"
 }
 
 variable "availability-zones" {
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  default     = ["us-west-1a", "us-west-1b", "us-west-1c"]
   type        = list(any)
   description = "The AWS AZ to deploy EKS"
 }

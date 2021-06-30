@@ -10,7 +10,7 @@ module "bastion-asg" {
 
   image_id                     = data.aws_ami.bastion.id
   instance_type                = "t2.small"
-  security_groups              = [data.aws_security_group.bastion.id]
+  security_groups              = [module.ssh_sg.security_group_id]
   associate_public_ip_address  = true
   recreate_asg_when_lc_changes = true
 

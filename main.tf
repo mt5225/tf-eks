@@ -1,5 +1,5 @@
 module "eks" {
-  source = "./moddules/eks"
+  source = "./modules/eks"
 
   aws-region          = var.aws-region
   availability-zones  = var.availability-zones
@@ -15,7 +15,7 @@ module "eks" {
   public-subnet-cidr  = var.public-subnet-cidr
   db-subnet-cidr      = var.db-subnet-cidr
   eks-cw-logging      = var.eks-cw-logging
-  ec2-key-public-key  = var.ec2-key
+  ec2-key-public-key  = var.ec2-key-public-key
 }
 
 

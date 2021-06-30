@@ -8,9 +8,4 @@ eks-state
 
 # .tfvars files
 *.tfvars
-
-config-map-aws-auth.yaml
-
-# node modules
-
-node_modules/*
+tfplan

@@ -5,7 +5,7 @@
 
 module "cluster-sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "3.0.1"
+  version = "4.3.0"
 
   name        = "cluster-sg"
   description = "EKS node security groups"
@@ -19,7 +19,7 @@ module "cluster-sg" {
       to_port                  = 443
       protocol                 = "tcp"
       description              = "Allow pods to communicate with the cluster API Server"
-      source_security_group_id = module.node-sg.this_security_group_id
+      source_security_group_id = module.node-sg.security_group_id
     },
   ]
 
@@ -37,7 +37,7 @@ module "cluster-sg" {
 
 module "node-sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "3.0.1"
+  version = "4.3.0"
 
   name        = "node-sg"
   description = "EKS node security groups"
@@ -55,7 +55,7 @@ module "node-sg" {
       to_port                  = 65535
       protocol                 = "tcp"
       description              = "Allow EKS Control Plane"
-      source_security_group_id = module.cluster-sg.this_security_group_id
+      source_security_group_id = module.cluster-sg.security_group_id
     },
   ]
 
@@ -73,7 +73,7 @@ module "node-sg" {
 # BASTION
 module "ssh_sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "3.0.1"
+  version = "4.3.0"
 
   name        = "ssh-sg"
   description = "Security group which is to allow SSH from Bastion"
